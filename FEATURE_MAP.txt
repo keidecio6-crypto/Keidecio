@@ -1,0 +1,53 @@
+PRIMO CPM Mini App — feature map (old callback → web action)
+
+Bot launcher only:
+  /start → Open App (WebAppInfo /login) + Buy Subscription + My Status
+  /givesub /remsub /users /admin
+
+Routes:
+  /login → login.html
+  /app , /dashboard → dashboard.html (product UI)
+  / → redirect /login
+
+Auth:
+  initData / tg_id → api/me, api/cpm_login (login allowed without sub)
+  Features require subscription (api/action, clone)
+
+Old callback_data          → Dashboard button / API action
+--------------------------  --------------------------------
+init_login / init_register → /login tabs
+acc_name                   → acc_name → /api/action
+acc_id                     → acc_id
+acc_email                  → acc_email
+acc_pass                   → acc_pass
+eco_king / acc rank        → acc_rank
+eco_money_max              → eco_money
+eco_coins_max              → eco_coin
+eco_money_cust             → eco_money_c
+eco_coins_cust             → eco_coin_c
+unl_w16                    → unl_w16
+unl_smoke                  → unl_smoke
+unl_fuel                   → unl_fuel
+unl_damage                 → unl_damage
+unl_horns                  → unl_horns
+unl_anim                   → unl_anim
+unl_houses                 → unl_houses
+unl_wheels                 → unl_wheels
+unl_levels                 → unl_levels
+unl_clothes                → unl_clothes
+unl_ultimate               → unl_all
+veh_unlock_all             → veh_all
+veh_unlock_single          → veh_one
+unl_w124                   → veh_w124
+unl_camry                  → veh_camry
+prem_clone                 → clone_one → /api/clone
+prem_bulk_clone            → clone_bulk → /api/bulk_clone (file to TG, max 50, no friends)
+refresh_account            → acc_refresh
+logout                     → Logout → /login
+
+No Open in browser button.
+No parallel full inline feature tree.
+
+veh_siren / siren unlock     → veh_siren (siren_mod.unlock_siren all cars)
+                             → veh_siren_one (by Car ID)
+plate inject                 → plate_inject (plate_mod + plates.json on account)
